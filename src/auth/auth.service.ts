@@ -7,7 +7,5 @@ export class AuthService {
     constructor(
         @InjectRepository(UserRepository)
         private userRepository: UserRepository
-    ) {
-        
-    }
+    ) { }
 }
