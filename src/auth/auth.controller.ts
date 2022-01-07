@@ -1,4 +1,5 @@
-import { Body, Controller, Post, Req, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Post, Req, UseGuards, ValidationPipe } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { AuthCredentialsDto } from './dto/auth_credential.dto';
 
@@ -17,6 +18,7 @@ export class AuthController {
     }
 
     @Post('/test')
+    @UseGuards(AuthGuard())
     test(@Req() req) {
         console.log('req', req);
     }
