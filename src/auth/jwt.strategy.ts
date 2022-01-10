@@ -6,6 +6,7 @@ import { User } from "./user.entity";
 import { UserRepository } from "./user.repository";
 import * as config from 'config';
 
+
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
     constructor(
